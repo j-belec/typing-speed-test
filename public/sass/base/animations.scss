@@ -1,0 +1,63 @@
+@keyframes text-bright {
+  0% {
+    text-shadow: none;
+  }
+
+  50% {
+    text-shadow: #10b3ff 1px 0px 10px;
+  }
+
+  100% {
+    text-shadow: none;
+  }
+}
+
+@keyframes slide-right {
+  0% {
+    opacity: 0;
+    transform: translateX(15rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-15rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(5rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes focus-letter {
+  0% {
+    border-right: 1.5px solid transparent;
+  }
+
+  50% {
+    border-right: 1.5px solid black;
+  }
+
+  100% {
+    border-right: 1.5px solid transparent;
+  }
+}
