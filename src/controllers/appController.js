@@ -11,9 +11,10 @@ module.exports = {
       where: { lang: language },
     });
 
-    const id = Math.round(Math.random() * phrasesArr.length - 1);
+    const id = Math.round(Math.random() * (phrasesArr.length - 1));
     console.log(id);
-    const phraseContent = phrasesArr[id].dataValues.content.split("");
+    const phraseContent = phrasesArr[id].dataValues.content.split(" ");
+    console.log(phraseContent);
 
     res.render("game", { phrase: phraseContent });
   },

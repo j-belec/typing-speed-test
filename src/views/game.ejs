@@ -23,11 +23,17 @@
   <body>
     <div class="main__container" id="main">
       <div class="main__text-container">
-        <% phrase.map(letter => { %> <% if(letter == " ") { %>
-        <span class="partes">&nbsp</span>
-        <% } else { %>
-        <letter class="partes"><%=letter%></letter>
-        <% } %> <% }) %>
+        <% let phraseSize = phrase.length%> <% let iteration = 0%>
+        <%phrase.map(word => { %> <% iteration = iteration + 1%> <% let
+        letterArr = word.split("")%>
+        <div>
+          <%letterArr.map(letter => { %>
+          <letter class="partes"><%=letter%></letter>
+          <%})%> <%if(iteration != phraseSize) {%>
+          <letter class="partes">&nbsp;</letter>
+          <% } %>
+        </div>
+        <% }) %>
         <i class="fa-solid fa-quote-right main__quotes-icon"></i>
       </div>
       <textarea
@@ -39,8 +45,7 @@
       <div class="main__stats-container">
         <p>Time: <span class="actual-time">--</span></p>
         <p>Accuracy: <span class="accuracy">--</span></p>
-        <p>Last time: <span></span>--</p>
-        <p>Best time: <span></span>--</p>
+        <p>WPM: <span class="wpm">--</span></p>
       </div>
       <div class="main__btns-container">
         <button class="main__btn main__btn--start">Start time</button>
