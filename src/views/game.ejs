@@ -29,7 +29,10 @@
         <div>
           <%letterArr.map(letter => { %>
           <letter class="partes"><%=letter%></letter>
-          <%})%> <%if(iteration != phraseSize) {%>
+          <%})%>
+        </div>
+        <div>
+          <%if(iteration != phraseSize) {%>
           <letter class="partes">&nbsp;</letter>
           <% } %>
         </div>
@@ -40,28 +43,62 @@
         name=""
         id="userinput"
         class="main__user-input"
-        placeholder="Type your words here!&#10;Press start time button to start."
+        placeholder=""
       ></textarea>
       <div class="main__stats-container">
+        <%if(lang == "eng") {%>
         <p>Time: <span class="actual-time">--</span></p>
         <p>Accuracy: <span class="accuracy">--</span></p>
         <p>WPM: <span class="wpm">--</span></p>
+        <%} else {%>
+        <p>Tiempo: <span class="actual-time">--</span></p>
+        <p>Precisión: <span class="accuracy">--</span></p>
+        <p>PPM: <span class="wpm">--</span></p>
+        <%}%>
       </div>
+      <%if(lang == "eng") {%>
+      <p class="main__start-text">Press Start button!</p>
+      <%} else {%>
+      <p class="main__start-text">Presioná el botón Empezar!</p>
+      <%}%>
       <div class="main__btns-container">
-        <button class="main__btn main__btn--start">Start time</button>
+        <%if(lang == "eng") {%>
+        <button class="main__btn main__btn--start">Start</button>
         <button class="main__btn main__btn--another">
           Another text <i class="fa-solid fa-rotate"></i>
         </button>
+        <%} else {%>
+        <button class="main__btn main__btn--start">Empezar</button>
+        <button class="main__btn main__btn--another">
+          Cambiar texto <i class="fa-solid fa-rotate"></i>
+        </button>
+        <%}%>
       </div>
       <a href="/" class="main__btn main__btn--menu">Menu</a>
     </div>
-    <!-- <div class="main__popup-container">
+    <div class="main__popup-container">
+      <%if(lang == "eng") {%>
       <p class="main__popup-text">
-        Time: <span class="main__popup-time"></span>
+        Time: <span class="main__popup-time">30s</span>
       </p>
       <p class="main__popup-text">
-        Accuracy: <span class="main__popup-accuracy"></span>
+        Accuracy: <span class="main__popup-accuracy">90.7%</span>
       </p>
-    </div> -->
+      <p class="main__popup-text">
+        WPM: <span class="main__popup-wpm">35.6</span>
+      </p>
+      <%} else {%>
+      <p class="main__popup-text">
+        Tiempo: <span class="main__popup-time">30s</span>
+      </p>
+      <p class="main__popup-text">
+        Precisión: <span class="main__popup-accuracy">90.7%</span>
+      </p>
+      <p class="main__popup-text">
+        PPM: <span class="main__popup-wpm">35.6</span>
+      </p>
+      <%}%>
+      <i class="fa-solid fa-xmark main__popup-xmark"></i>
+    </div>
   </body>
 </html>
