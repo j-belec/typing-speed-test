@@ -1,9 +1,22 @@
 const { Sequelize } = require("sequelize");
 
-const sequelize = new Sequelize("typing-test", "root", "", {
-  host: "localhost",
-  dialect: "mysql",
-});
+// const sequelize = new Sequelize(
+//   "railway",
+//   "root",
+//   "TpFDCKWUpuRnzoMbNYZQpygTbUgcBMeF",
+//   {
+//     host: "viaduct.proxy.rlwy.net",
+//     dialect: "mysql",
+//   }
+// );
+// const sequelize = new Sequelize("typing-test", "root", "", {
+//   host: "localhost",
+//   dialect: "mysql",
+// });
+
+const sequelize = new Sequelize(
+  "mysql://root:TpFDCKWUpuRnzoMbNYZQpygTbUgcBMeF@viaduct.proxy.rlwy.net:47499/railway"
+);
 
 try {
   (async function () {

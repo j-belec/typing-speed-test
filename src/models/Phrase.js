@@ -7,14 +7,15 @@ const Phrase = sequelize.define(
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
-      allowNull: false,
+      // allowNull: false,
     },
     content: {
       type: DataTypes.TEXT,
       allowNull: false,
     },
     lang: {
-      type: DataTypes.CHAR(3),
+      // type: DataTypes.CHAR(3),
+      type: DataTypes.TEXT,
       allowNull: false,
     },
   },
