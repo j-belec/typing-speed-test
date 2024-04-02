@@ -23,6 +23,10 @@
   </head>
   <body>
     <div class="main__container" id="main">
+      <div class="main__caps disappear">
+        <i class="fa-solid fa-lock"></i>
+        <p>Caps Lock</p>
+      </div>
       <div class="main__text-container">
         <% let phraseSize = phrase.length%> <% let iteration = 0%>
         <%phrase.map(word => { %> <% iteration = iteration + 1%> <% let
@@ -58,20 +62,20 @@
         <%}%>
       </div>
       <%if(lang == "eng") {%>
-      <p class="main__start-text">Press Start button!</p>
+      <p class="main__start-text">Start typing!</p>
       <%} else {%>
-      <p class="main__start-text">Presioná el botón Empezar!</p>
+      <p class="main__start-text">Empezá a tipear!</p>
       <%}%>
       <div class="main__btns-container">
         <%if(lang == "eng") {%>
-        <button class="main__btn main__btn--start">Start</button>
+        <button class="main__btn main__btn--restart">Restart text</button>
         <button class="main__btn main__btn--another">
-          Another text <i class="fa-solid fa-rotate"></i>
+          Another text
         </button>
         <%} else {%>
-        <button class="main__btn main__btn--start">Empezar</button>
+        <button class="main__btn main__btn--restart">Reiniciar texto</button>
         <button class="main__btn main__btn--another">
-          Cambiar texto <i class="fa-solid fa-rotate"></i>
+          Cambiar texto
         </button>
         <%}%>
       </div>
@@ -79,25 +83,51 @@
     </div>
     <div class="main__popup-container">
       <%if(lang == "eng") {%>
-      <p class="main__popup-text">
-        Time: <span class="main__popup-time">30s</span>
-      </p>
-      <p class="main__popup-text">
-        Accuracy: <span class="main__popup-accuracy">90.7%</span>
-      </p>
-      <p class="main__popup-text">
-        WPM: <span class="main__popup-wpm">35.6</span>
-      </p>
+      <div class="main__popup-text">
+        <p>Time</p>
+        <p class="main__popup-time"></p>
+      </div>
+      <div class="main__popup-text">
+        <p>Accuracy</p>
+        <p class="main__popup-accuracy"></p>
+      </div>
+      <div class="main__popup-text">
+        <p>WPM</p>
+        <p class="main__popup-wpm"></p>
+      </div>
+      <div class="main__popup-text">
+        <p>Characters</p>
+        <div>
+          <span class="main__popup-chars"></span>
+          <span> / </span>
+          <span class="main__popup-chars-cor" style="color: green;"></span>
+          <span> / </span>
+          <span class="main__popup-chars-inc" style="color: red;"></span>
+        </div>
+      </div>
       <%} else {%>
-      <p class="main__popup-text">
-        Tiempo: <span class="main__popup-time">30s</span>
-      </p>
-      <p class="main__popup-text">
-        Precisión: <span class="main__popup-accuracy">90.7%</span>
-      </p>
-      <p class="main__popup-text">
-        PPM: <span class="main__popup-wpm">35.6</span>
-      </p>
+      <div class="main__popup-text">
+        <p>Tiempo</p>
+        <p class="main__popup-time"></p>
+      </div>
+      <div class="main__popup-text">
+        <p>Precisión</p>
+        <p class="main__popup-accuracy"></p>
+      </div>
+      <div class="main__popup-text">
+        <p>PPM</p>
+        <p class="main__popup-wpm"></span>
+      </div>
+      <div class="main__popup-text">
+        <p>Caracteres</p>
+        <div>
+          <span class="main__popup-chars"></span>
+          <span> / </span>
+          <span class="main__popup-chars-cor" style="color: green;"></span>
+          <span> / </span>
+          <span class="main__popup-chars-inc" style="color: red;"></span>
+        </div>
+      </div>
       <%}%>
       <i class="fa-solid fa-xmark main__popup-xmark"></i>
     </div>

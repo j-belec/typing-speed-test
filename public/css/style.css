@@ -192,6 +192,23 @@ html {
 .main__h2 {
   font-size: 3rem; }
 
+.main__caps {
+  position: absolute;
+  top: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 2rem;
+  gap: 2rem;
+  color: white;
+  background-color: #ff9800;
+  padding: 1rem 2rem;
+  z-index: 1000;
+  border-radius: 10px; }
+  .main__caps i {
+    margin-bottom: 1.5px; }
+
 .main__text-container {
   width: 100rem;
   height: 25rem;
@@ -268,10 +285,10 @@ html {
   z-index: 1; }
   .main__btn:hover {
     cursor: pointer; }
-  .main__btn--start {
+  .main__btn--restart {
     background-color: #0288d1;
     animation: slide-left 1s; }
-    .main__btn--start:before {
+    .main__btn--restart:before {
       content: "";
       position: absolute;
       bottom: 0;
@@ -282,9 +299,9 @@ html {
       transition: all 0.3s;
       border-radius: 10rem;
       z-index: -1; }
-    .main__btn--start:hover {
+    .main__btn--restart:hover {
       color: #fff; }
-      .main__btn--start:hover:before {
+      .main__btn--restart:hover:before {
         width: 100%; }
   .main__btn--another {
     background-color: #0288d1;
@@ -331,7 +348,7 @@ html {
 
 .main__popup-container {
   position: absolute;
-  height: 40rem;
+  height: 46rem;
   width: 35rem;
   background-color: #b3e5fc;
   color: black;
@@ -345,7 +362,7 @@ html {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 4rem;
+  gap: 1.7rem;
   z-index: 23;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   pointer-events: none;
@@ -353,7 +370,13 @@ html {
 
 .main__popup-text {
   font-size: 3rem;
-  font-weight: 600; }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+  .main__popup-text p:first-child {
+    margin-bottom: -0.5rem;
+    font-weight: 600; }
 
 .main__popup-xmark {
   position: absolute;
@@ -380,3 +403,8 @@ html {
   opacity: 1;
   pointer-events: auto;
   visibility: visible; }
+
+.disappear {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden; }
