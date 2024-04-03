@@ -1,4 +1,5 @@
-const Phrase = require("../models/Phrase");
+const { PrismaClient } = require("@prisma/client");
+const prisma = new PrismaClient();
 
 module.exports = {
   home: async function (req, res) {
@@ -7,13 +8,12 @@ module.exports = {
   lang: async function (req, res) {
     const language = req.params.lang;
 
-    const phrasesArr = await Phrase.findAll({
+    const phrasesArr = await prisma.phrase.findMany({
       where: { lang: language },
     });
-
     const id = Math.round(Math.random() * (phrasesArr.length - 1));
-    const phraseContent = phrasesArr[id].dataValues.content.split(" ");
+    const phraseArr = phrasesArr[id].content.split(" ");
 
-    res.render("game", { phrase: phraseContent, lang: language });
+    res.render("game", { phrase: phraseArr, lang: language });
   },
 };
