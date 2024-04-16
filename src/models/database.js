@@ -1,7 +1,7 @@
 const { Sequelize } = require("sequelize");
 
 const sequelize = new Sequelize(
-  "mysql://root:TpFDCKWUpuRnzoMbNYZQpygTbUgcBMeF@viaduct.proxy.rlwy.net:47499/railway"
+  "mysql://ugy1s0apl0t6n9hv:1B8pPwK1yLyhmZr84com@bkrit7vdod3nrci8yu2t-mysql.services.clever-cloud.com:3306/bkrit7vdod3nrci8yu2t"
 );
 
 try {
